@@ -46,7 +46,7 @@ function getRandomQuote(){
 let randomColor;
 // function to change background color
 function changeBackgroundColor() {
-    // creates a variable randomColor which generate a hex number as a string
+    // creates a variable randomColor which generates a hex number as a string
     randomColor = Math.floor(Math.random()*16777215).toString(16);
     // gets the body tag and changes the css style bgColor to the randomColor
     document.getElementsByTagName("Body")[0].style.backgroundColor = '#' + randomColor;
