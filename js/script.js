@@ -6,25 +6,34 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 var intervalID = window.setInterval(printQuote, 10000);
 
 // array object of quotes
-var quotes = [];
-quotes[0] = {
-    'quote': 'quote1',
-    'source': 'source1',
-    'citation': 'citation',
-    'year': 1993
-};
-quotes[1] = {
+var quotes = [
+{
+    'quote': 'But man is not made for defeat. A man can be destroyed but not defeated.',
+    'source': 'Ernest Hemingway'
+},
+{
     'quote': 'quote2',
     'source': 'source2',
     'citation': 'citation',
     'year': 1994,
     'tag': ''
-};
-quotes[2] = {
+},
+{
     'quote': 'quote3',
     'source': 'source3',
     'citation': 'citation'
-};
+},
+{
+    'quote': 'quote4',
+    'source': 'source3',
+    'citation': 'citation'
+},
+{
+    'quote': 'Hello World',
+    'source': 'Any Programming Book',
+    'tag': 'Humour'
+}
+]
 
 // random quote variable
 var randomQuote;
@@ -65,6 +74,12 @@ function printQuote(){
     if(randomQuote.hasOwnProperty("year")){
         // if it has a year, concatenate year to string
         newQuote += '<span class="year">' + randomQuote.year + '</span>';
+    }
+
+    // checking if object has year property
+    if(randomQuote.hasOwnProperty("tag")){
+        // if it has a year, concatenate year to string
+        newQuote += '<span class="tag">' + randomQuote.tag + '</span>';
     }
 
     newQuote += '</p>';
